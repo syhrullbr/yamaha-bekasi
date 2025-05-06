@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yamaha Victory Motor Tambun - Bekasi</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { display: flex; align-items: center; gap: 20px; background-color: #003366; color: white; padding: 20px; }
+    header img { height: 60px; }
+    nav { background-color: #0055aa; text-align: center; padding: 10px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .container { padding: 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .gallery img { width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .contact, .form-section, .map-section, .testimoni-section { margin-top: 40px; }
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    form input, form select, form textarea {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; }
+    .testimonial {
+      background: #f4f4f4;
+      padding: 20px;
+      border-left: 5px solid #0055aa;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    footer { background-color: #003366; color: white; text-align: center; padding: 10px; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Yamaha_Motor_Company_logo.svg/512px-Yamaha_Motor_Company_logo.svg.png" alt="Logo Yamaha">
+  <div>
+    <h1 style="margin: 0;">Yamaha Victory Motor Tambun</h1>
+    <p style="margin: 5px 0;">Dealer Resmi Motor Yamaha - Bekasi</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#galeri">Galeri</a>
+  <a href="#form">Pemesanan</a>
+  <a href="#lokasi">Lokasi</a>
+  <a href="#testimoni">Testimoni</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<div class="container">
+
+  <section id="galeri">
+    <h2>Galeri Motor Yamaha</h2>
+    <div class="gallery">
+      <img src="https://yamaha-motor.co.id/uploads/products/thumbnail/FreeGo.jpg" alt="Yamaha FreeGo">
+      <img src="https://yamaha-motor.co.id/uploads/products/thumbnail/NMAX.jpg" alt="Yamaha NMAX">
+      <img src="https://yamaha-motor.co.id/uploads/products/thumbnail/AEROX.jpg" alt="Yamaha Aerox">
+      <img src="https://yamaha-motor.co.id/uploads/products/thumbnail/GEAR125.jpg" alt="Yamaha Gear 125">
+      <img src="https://yamaha-motor.co.id/uploads/products/thumbnail/MT15.jpg" alt="Yamaha MT-15">
+    </div>
+  </section>
+
+  <section id="form" class="form-section">
+    <h2>Form Pemesanan</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" id="nama" placeholder="Nama Lengkap" required>
+      <input type="tel" id="nomor" placeholder="Nomor HP (08...)" required>
+      <select id="model">
+        <option value="">Pilih Model Motor</option>
+        <option>Yamaha NMAX</option>
+        <option>Yamaha Aerox</option>
+        <option>Yamaha FreeGo</option>
+        <option>Yamaha Gear 125</option>
+        <option>Yamaha MT-15</option>
+      </select>
+      <textarea id="pesan" placeholder="Catatan tambahan (opsional)"></textarea>
+      <button type="submit">Kirim Pemesanan via WhatsApp</button>
+    </form>
+  </section>
+
+  <section id="lokasi" class="map-section">
+    <h2>Lokasi Dealer</h2>
+    <iframe src="https://www.google.com/maps?q=Victory%20Motor%20Tambun%20Bekasi&output=embed"></iframe>
+  </section>
+
+  <section id="testimoni" class="testimoni-section">
+    <h2>Testimoni Pelanggan</h2>
+    <div class="testimonial">
+      <p>"Pelayanan sangat ramah, motor langsung dikirim ke rumah! Terima kasih Yamaha Victory Motor!"</p>
+      <strong>- Andi, Tambun Selatan</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Harga bersaing, proses kredit cepat. Sangat puas belanja di sini!"</p>
+      <strong>- Siti, Bekasi Timur</strong>
+    </div>
+  </section>
+
+  <section id="kontak" class="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Untuk informasi lebih lanjut, klik tombol WhatsApp di bawah:</p>
+    <a href="https://wa.me/628195051005" class="whatsapp-button" target="_blank">
+      Hubungi via WhatsApp
+    </a>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Yamaha Victory Motor Tambun - Bekasi. All rights reserved.
+</footer>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    const nama = document.getElementById('nama').value;
+    const nomor = document.getElementById('nomor').value;
+    const model = document.getElementById('model').value;
+    const pesan = document.getElementById('pesan').value;
+
+    const whatsappNumber = "628195051005";
+    const message = `Halo, saya ${nama} ingin memesan motor Yamaha model ${model}. Nomor HP saya: ${nomor}. Catatan: ${pesan}`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
